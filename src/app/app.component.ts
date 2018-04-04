@@ -4,28 +4,29 @@ import { BrowserTab } from '@ionic-native/browser-tab';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PageInterface, UtilService } from '../providers';
+// import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MosumApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: string = 'TabsPage';
-  pages: Array<{ heading: string, items: PageInterface[] }> = [
-    {
-      heading: 'Weather',
-      items: [
-        { title: 'Home', name: 'TabsPage', tabName: 'HomeWeatherPage', index: 0, icon: 'home' },
-        { title: 'World', name: 'TabsPage', tabName: 'WorldCityListPage', index: 1, icon: 'globe' }
-      ]
-    },
-    {
-      heading: 'Settings',
-      items: [
-        { title: 'Settings', name: 'SettingsPage', icon: 'settings' }
-      ]
-    }
-  ];
+  rootPage: string = 'LoginPage';
+  // pages: Array<{ heading: string, items: PageInterface[] }> = [
+  //   {
+  //     heading: 'Weather',
+  //     items: [
+  //       { title: 'Home', name: 'TabsPage', tabName: 'HomeWeatherPage', index: 0, icon: 'home' },
+  //       { title: 'World', name: 'TabsPage', tabName: 'WorldCityListPage', index: 1, icon: 'globe' }
+  //     ]
+  //   },
+  //   {
+  //     heading: 'Settings',
+  //     items: [
+  //       { title: 'Settings', name: 'SettingsPage', icon: 'settings' }
+  //     ]
+  //   }
+  // ];
 
   constructor(public platform: Platform,
               public utilService: UtilService,

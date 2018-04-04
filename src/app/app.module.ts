@@ -9,6 +9,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { DatabaseService, ForecastService, Sql, UtilService } from '../providers';
 import { MosumApp } from './app.component';
+import { Facebook } from '@ionic-native/facebook';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth'
+import { FIREBASE_CREDENTIALS } from "./firebase.credentials";
+
 
 @NgModule({
   declarations: [
@@ -18,6 +24,8 @@ import { MosumApp } from './app.component';
     JsonpModule,
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
+    AngularFireAuthModule,
     IonicModule.forRoot(MosumApp, {
       preloadModules: true
     })
@@ -34,7 +42,9 @@ import { MosumApp } from './app.component';
     ForecastService,
     SplashScreen,
     StatusBar,
-    BrowserTab
+    BrowserTab,
+    Facebook,
+    AngularFireAuth
   ]
 })
 export class AppModule {
